@@ -1,18 +1,8 @@
 defmodule ErrataRepro do
-  @moduledoc """
-  Documentation for `ErrataRepro`.
-  """
+  def raise_error do
+    path = "my_path.txt"
+    script = "some_script"
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> ErrataRepro.hello()
-      :world
-
-  """
-  def hello do
-    :world
+    raise ErrataRepro.Error, reason: :script_not_found, context: %{path: path, script: script}
   end
 end
